@@ -242,6 +242,12 @@ static void cancel_delayed_block(CWDelayedBlockHandle delayedHandle)
     if (SYSTEM_VERSION_LESS_THAN(@"8.0") && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
         statusBarHeight = [[UIApplication sharedApplication] statusBarFrame].size.width;
     }
+    
+    // iPhone XR でノッチが label に被るためX系は height を広げる（暫定対応）
+    if (statusBarHeight > 20) {
+        statusBarHeight += 4;
+    }
+    
     return statusBarHeight > 0 ? statusBarHeight : 20;
 }
 
