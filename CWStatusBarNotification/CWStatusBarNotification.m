@@ -244,7 +244,7 @@ static void cancel_delayed_block(CWDelayedBlockHandle delayedHandle)
     }
     
     // iPhone XR でノッチが label に被るためX系は height を広げる（暫定対応）
-    if (statusBarHeight > 20) {
+    if (statusBarHeight > 36) {
         statusBarHeight += 4;
     }
     
